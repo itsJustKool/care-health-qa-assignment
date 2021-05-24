@@ -3,10 +3,10 @@ const { config } = require("./base.web.conf");
 exports.config = {
   ...config,
   env: "qa",
-  specs: ["./test/specs/**/*.js"],
+  specs: ["./test/specs/web/**/*.js"],
   capabilities: [
     {
-      maxInstances: 1,
+      maxInstances: 4,
       browserName: "chrome",
       acceptInsecureCerts: true,
       "goog:chromeOptions": {
@@ -19,14 +19,14 @@ exports.config = {
         ],
       },
     },
-    // {
-    //   maxInstances: 1,
-    //   browserName: "firefox",
-    //   "moz:firefoxOptions": {
-    //     // flag to activate Firefox headless mode (see https://github.com/mozilla/geckodriver/blob/master/README.md#firefox-capabilities for more details about moz:firefoxOptions)
-    //     // args: ['-headless']
-    //   },
-    // },
+    {
+      maxInstances: 2,
+      browserName: "firefox",
+      "moz:firefoxOptions": {
+        // flag to activate Firefox headless mode (see https://github.com/mozilla/geckodriver/blob/master/README.md#firefox-capabilities for more details about moz:firefoxOptions)
+        // args: ['-headless']
+      },
+    },
   ],
   //
   // Set a base URL in order to shorten url command calls. If your `url` parameter starts

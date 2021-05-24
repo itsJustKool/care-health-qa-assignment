@@ -8,7 +8,7 @@ import CheckoutPage from "../../pages/checkout.page";
 import loginData from "../../data/login.data";
 
 describe("Care Health - QA assignment", () => {
-  it("web test scenario", () => {
+  it("Web test scenario", () => {
     browser.maximizeWindow();
     browser.url("");
     HomePage.clickSignInBtn();

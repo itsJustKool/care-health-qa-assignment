@@ -3,7 +3,8 @@ const { config } = require("./base.web.conf");
 exports.config = {
   ...config,
   env: "qa",
-  specs: ["./test/specs/**/*.js"],
+  specs: ["./test/specs/web/**/*.js"],
+  maxInstances: 1,
   capabilities: [
     {
       maxInstances: 1,
@@ -19,14 +20,14 @@ exports.config = {
       //   ],
       // },
     },
-    // {
-    //   maxInstances: 1,
-    //   browserName: "firefox",
-    //   "moz:firefoxOptions": {
-    //     // flag to activate Firefox headless mode (see https://github.com/mozilla/geckodriver/blob/master/README.md#firefox-capabilities for more details about moz:firefoxOptions)
-    //     // args: ['-headless']
-    //   },
-    // },
+    {
+      maxInstances: 1,
+      browserName: "firefox",
+      "moz:firefoxOptions": {
+        // flag to activate Firefox headless mode (see https://github.com/mozilla/geckodriver/blob/master/README.md#firefox-capabilities for more details about moz:firefoxOptions)
+        // args: ['-headless']
+      },
+    },
     // {
     //   maxInstances: 1,
     //   browserName: "safari",

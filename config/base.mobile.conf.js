@@ -14,45 +14,7 @@ exports.config = {
   // Define which test specs should run. The pattern is relative to the directory
   // from which `wdio` was called.
   //
-  specs: ["./test/specs/web/**/*.js"],
-  //
-  // ============
-  // Capabilities
-  // ============
-  // Define your capabilities here. WebdriverIO can run multiple capabilities at the same
-  // time. Depending on the number of capabilities, WebdriverIO launches several test
-  // sessions. Within your capabilities you can overwrite the spec and exclude options in
-  // order to group specific specs to a specific capability.
-  maxInstances: 20,
-  capabilities: [
-    {
-      maxInstances: 4,
-      browserName: "chrome",
-      acceptInsecureCerts: true,
-      // "goog:chromeOptions": {
-      //   args: [
-      //     "--no-sandbox",
-      //     "--disable-infobars",
-      //     "--headless",
-      //     "--disable-gpu",
-      //     "--window-size=1280,720",
-      //   ],
-      // },
-    },
-    // {
-    //   maxInstances: 1,
-    //   browserName: "firefox",
-    //   "moz:firefoxOptions": {
-    //     // flag to activate Firefox headless mode (see https://github.com/mozilla/geckodriver/blob/master/README.md#firefox-capabilities for more details about moz:firefoxOptions)
-    //     // args: ['-headless']
-    //   },
-    // },
-    // {
-    //   maxInstances: 1,
-    //   browserName: "safari",
-    // },
-  ],
-  //
+  specs: ["./test/specs/mobile/**/*.js"],
   // ===================
   // Test Configurations
   // ===================
@@ -84,10 +46,15 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
+  port: 4723, // default appium port
   services: [
     [
-      "selenium-standalone",
-      { drivers: { firefox: true, chrome: true, safari: true } },
+      "appium",
+      {
+        port: 4723,
+        debugLogSpacing: true,
+        relaxedSecurity: true,
+      },
     ],
   ],
 
