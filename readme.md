@@ -88,11 +88,26 @@ source ~/.zshrc
 (*)Note: if you're using Macbook with M1 chip, there's an issue with Android Emulator and required workaround. The workaround solution is quite complicated so I didn't include it in this readme.
 ## Usage
 
-- Open a terminal and go to the root folder of the repository
+Open a terminal and go to the root folder of the repository
 
 - To run the web test script:
 ```bash
 yarn run test-web
+```
+
+- To run the web test script with headless mode:
+```bash
+yarn run test-web-headless
+```
+
+- To run the android test script:
+```bash
+yarn run test-android
+```
+
+- To run the iOS test script:
+```bash
+yarn run test-ios
 ```
 
 ## Report
